@@ -90,12 +90,12 @@ with mp_face_mesh.FaceMesh(
                         .get_default_face_mesh_contours_style())
 
                 imageHeight, imageWidth= image.shape[0], image.shape[1]
-                cv2.putText(image, str(int(face_landmarks.landmark[10].x * imageWidth)) +","+
-                            str(int(face_landmarks.landmark[10].y * imageHeight)) +","+
-                            str(int(face_landmarks.landmark[10].z * 1000))
+                cv2.putText(image, str(int(face_landmarks.landmark[0].x * imageWidth)) +","+
+                            str(int(face_landmarks.landmark[0].y * imageHeight)) +","+
+                            str(int(face_landmarks.landmark[0].z * 1000))
                             , [10, 100], cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 1, cv2.LINE_AA)
 
-                image = cv2.circle(image, (int(face_landmarks.landmark[10].x * imageWidth), int(face_landmarks.landmark[10].y* imageHeight)), 5, (255, 0, 0), 2)
+                image = cv2.circle(image, (int(face_landmarks.landmark[0].x * imageWidth), int(face_landmarks.landmark[0].y* imageHeight)), 5, (255, 0, 0), 2)
         cv2.imshow('MediaPipe FaceMesh', image)
         if cv2.waitKey(5) & 0xFF == 27:
             break
